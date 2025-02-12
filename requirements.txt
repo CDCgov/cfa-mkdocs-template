@@ -1,0 +1,4 @@
+mkdocs
+mkdocs-material
+mkdocstrings[python]
+mdx_truly_sane_lists
