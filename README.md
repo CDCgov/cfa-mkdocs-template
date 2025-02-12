@@ -19,7 +19,7 @@ Copy over these files:
 
 The Python dependencies are in `requirements.txt`. For example, if you are using poetry, you could run:
 
-    poetry add --group dev $(cat requirements.txt)
+    cat requirements.txt | xargs poetry add --group mkdocs
 
 There is no need to keep this file in your repo.
 
@@ -31,6 +31,7 @@ The `.gitignore` in this repo has just one entry, `site/`, which is the default 
 - There are two `.github/workflows/`:
   - `mkdocs-build.yaml`: On each PR, check that `mkdocs build` runs without error. Assumes you are using poetry.
   - `mkdocs-deploy.yaml`: On pushes to `main`, use `mkdocs gh-deploy` to update the repo's GitHub Pages.
+  - Note that these assume that you have a poetry group called `"mkdocs"`, to avoid installing all the dependencies when building the documentation.
 
 ### For internal use only
 
