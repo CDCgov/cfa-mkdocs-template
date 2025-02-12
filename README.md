@@ -23,6 +23,8 @@ The Python dependencies are in `requirements.txt`. For example, if you are using
 
 There is no need to keep this file in your repo.
 
+The `.gitignore` in this repo has just one entry, `site/`, which is the default location where `mkdocs build` will put locally built docs.
+
 ### Optional things
 
 There are two `.github/workflows/`:
