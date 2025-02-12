@@ -7,7 +7,7 @@
 - Easily building Python API documentation
 - Deploying documents to GitHub Pages
 
-See an example of what you can build on the GitHub Pages [site for this repo](https://jubilant-guide-9p5vklm.pages.github.io/).
+See an example of what you can build on the GitHub Pages site for this repo: <https://cdcent.github.io/cfa-mkdocs-template>
 
 ## Using this template
 
