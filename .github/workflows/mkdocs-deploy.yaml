@@ -27,5 +27,5 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
-          poetry install
+          poetry install --only mkdocs
       - run: poetry run mkdocs gh-deploy --force
