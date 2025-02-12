@@ -27,17 +27,18 @@ The `.gitignore` in this repo has just one entry, `site/`, which is the default 
 
 ### Optional things
 
-There are two `.github/workflows/`:
-
-- `mkdocs-build.yaml`: On each PR, check that `mkdocs build` runs without error. Assumes you are using poetry.
-- `mkdocs-deploy.yaml`: On pushes to `main`, use `mkdocs gh-deploy` to update the repo's GitHub Pages.
+- `docs/api.md` gives you an example of how to use [mkdocstrings](https://mkdocstrings.github.io/) to generate API documentation from doc strings.
+- There are two `.github/workflows/`:
+  - `mkdocs-build.yaml`: On each PR, check that `mkdocs build` runs without error. Assumes you are using poetry.
+  - `mkdocs-deploy.yaml`: On pushes to `main`, use `mkdocs gh-deploy` to update the repo's GitHub Pages.
 
 ### For internal use only
 
-These files are for purposes of the repository only, to check that `mkdocs` runs and the template builds:
-
-- `poetry.lock`
-- `pyproject.toml`
+- These files are a skeleton so that the API documentation can build:
+  - `mkdtemp/`
+- These files are to check that `mkdocs` runs and the template builds in this template repo:
+  - `poetry.lock`
+  - `pyproject.toml`
 
 ## Project Admin
 

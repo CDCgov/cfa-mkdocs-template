@@ -2,6 +2,7 @@ site_name: Title of documentation page
 
 nav:
   - index.md
+  - api.md
   # specify the table of contents structure here
 
 repo_url: https://github.com/cdcent/cfa-mkdocs-template
