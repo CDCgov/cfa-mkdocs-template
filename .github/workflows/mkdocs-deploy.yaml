@@ -9,15 +9,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # same as build
       - uses: actions/checkout@v4
-      - run: pipx install poetry
-      - uses: actions/setup-python@v5
-        with:
-          python-version: 3.x
-          cache: poetry
-      - run: poetry install --only mkdocs
-      # also deploy
+      - uses: ./.github/actions/mkdocs-cache
       - name: Configure Git Credentials
         run: |
           git config user.name github-actions[bot]

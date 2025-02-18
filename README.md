@@ -30,9 +30,10 @@ The `.gitignore` in this repo has just one entry, `site/`, which is the default 
 ### Optional things
 
 - `docs/api.md` gives you an example of how to use [mkdocstrings](https://mkdocstrings.github.io/) to generate API documentation from doc strings.
-- There are two `.github/workflows/`:
-  - `mkdocs-build.yaml`: On each PR, check that `mkdocs build` runs without error. Assumes you are using poetry.
-  - `mkdocs-deploy.yaml`: On pushes to `main`, use `mkdocs gh-deploy` to update the repo's GitHub Pages.
+- GitHub continuous integration:
+  - `.github/actions/mkdocs-cache/action.yaml`: Cache the poetry environment needed to run mkdocs. Used by the two workflows.
+  - `.github/workflows/mkdocs-build.yaml`: On each PR, check that `mkdocs build` runs without error. Assumes you are using poetry.
+  - `.github/workflows/mkdocs-deploy.yaml`: On pushes to `main`, use `mkdocs gh-deploy` to update the repo's GitHub Pages.
 
 ### For internal use only
 
