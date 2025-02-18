@@ -7,11 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: pipx install poetry
       - uses: actions/setup-python@v5
         with:
           python-version: 3.x
-      - name: Install dependencies
-        run: |
-          pip install poetry
-          poetry install --only mkdocs
+          cache: poetry
+      - run: poetry install --only mkdocs
       - run: poetry run mkdocs build
