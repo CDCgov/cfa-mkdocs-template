@@ -20,9 +20,9 @@ plugins:
       handlers:
         python:
           options:
-            extra:
-              show_root_heading: true
-              show_full_root_path: true
+            # see <https://mkdocstrings.github.io/python/usage/> for options
+            show_root_heading: true
+            show_object_full_path: true
   - search
 
 markdown_extensions:
