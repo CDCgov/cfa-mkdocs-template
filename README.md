@@ -17,7 +17,7 @@ Copy over these files:
 
 - `mkdocs.yaml`: Configure this file to account for your document structure, repo URL, etc.
 - `docs/index.md`: You will always want an `index.md`. You can add other `.md`s under `docs/`.
-- `docs/javascript/katex.js`: Provides math rendering.
+- [optional] `docs/javascript/katex.js`: Provides math rendering.
 
 The Python dependencies are in `requirements.txt`. For example, if you are using poetry, you could run:
 
@@ -35,7 +35,11 @@ The `.gitignore` in this repo has just one entry, `site/`, which is the default 
   - `.github/workflows/mkdocs-build.yaml`: On each PR, check that `mkdocs build` runs without error. Assumes you are using poetry.
   - `.github/workflows/mkdocs-deploy.yaml`: On pushes to `main`, use `mkdocs gh-deploy` to update the repo's GitHub Pages.
 
-### For internal use only
+### Troubleshooting
+
+- Ensure that you add mkdocs dependencies to the same group that is installed in `workflows/mkdocs.yaml`.
+
+## For use in this repo only
 
 - These files are a skeleton so that the API documentation can build:
   - `mkdtemp/`
