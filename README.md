@@ -21,7 +21,7 @@ Copy over these files:
 
 The Python dependencies are in `requirements.txt`. For example, if you are using poetry, you could run:
 
-    poetry add --group dev $(cat requirements.txt)
+    poetry add --group mkdocs $(cat requirements.txt)
 
 There is no need to keep this file in your repo.
 
