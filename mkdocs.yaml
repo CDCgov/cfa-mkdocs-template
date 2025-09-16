@@ -32,6 +32,8 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  # see <https://github.com/radude/mdx_truly_sane_lists> for how this plugin
+  # provides additional flexibility for list indentation
   - mdx_truly_sane_lists
   - pymdownx.arithmatex:
       generic: true
