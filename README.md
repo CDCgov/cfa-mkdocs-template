@@ -56,7 +56,9 @@ Note that `mkdocs gh-deploy` uses the older strategy of using GitHub Pages, by p
 
 `mkdocs gh-deploy` should just work, _whether your repo is on CDCGov or CDCEnt_. For repos on CDCGov, this will make a publicly-available website at `cdcgov.github.io/[repo]/`.
 
-> [!CAUTION] CFA policy requires that publicly-available documentation should only by used for documentation of software, not scientific results or publications.
+> [!CAUTION]
+>
+> CFA policy requires that publicly-available documentation should only by used for documentation of software, not scientific results or publications.
 
 If your repo is in a private GitHub organization, a redirect will be made to a website only accessible with the appropriate credentials.
 
