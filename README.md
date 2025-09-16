@@ -19,9 +19,9 @@ Copy over these files:
 - `docs/index.md`: You will always want an `index.md`. You can add other `.md`s under `docs/`.
 - [optional] `docs/javascript/katex.js`: Provides math rendering.
 
-The Python dependencies are in `requirements.txt`. For example, if you are using poetry, you could run:
+The Python dependencies are in `requirements.txt`. For example, if you are using [uv](https://docs.astral.sh/uv), you could run:
 
-    poetry add --group mkdocs $(cat requirements.txt)
+    uv add --dev $(cat requirements.txt)
 
 There is no need to keep this file in your repo.
 
@@ -44,7 +44,7 @@ The `.gitignore` in this repo has just one entry, `site/`, which is the default 
 - These files are a skeleton so that the API documentation can build:
   - `mkdtemp/`
 - These files are to check that `mkdocs` runs and the template builds in this template repo:
-  - `poetry.lock`
+  - `uv.lock`
   - `pyproject.toml`
 
 ## Project Admin
