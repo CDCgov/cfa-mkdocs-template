@@ -4,20 +4,19 @@
 
 [mkdocs](https://www.mkdocs.org/) is a tool for building simple static documentation from Markdown files, with extensions allowing for:
 
-- Easily building Python API documentation
+- Auto-generating Python API documentation
 - Deploying documents to GitHub Pages
 
 See an example of what you can build on the GitHub Pages site for this repo: <https://cdcent.github.io/cfa-mkdocs-template>
 
-## Using this template
+## Getting started
 
-### Things you'll need
+### Essentials
 
-Copy over these files:
+To use this template, you'll need to copy over these files:
 
 - `mkdocs.yaml`: Configure this file to account for your document structure, repo URL, etc.
 - `docs/index.md`: You will always want an `index.md`. You can add other `.md`s under `docs/`.
-- [optional] `docs/javascript/katex.js`: Provides math rendering.
 
 The Python dependencies are in `requirements.txt`. For example, if you are using [uv](https://docs.astral.sh/uv), you could run:
 
@@ -27,12 +26,43 @@ There is no need to keep this file in your repo.
 
 The `.gitignore` in this repo has just one entry, `site/`, which is the default location where `mkdocs build` will put locally built docs.
 
+You should now be able to `mkdocs serve` and `mkdocs build`!
+
 ### Optional things
 
-- `docs/api.md` gives you an example of how to use [mkdocstrings](https://mkdocstrings.github.io/) to generate API documentation from doc strings.
-- GitHub continuous integration `.github/workflows/mkdocs`: On each PR, check that `mkdocs build` runs without error. On a push to main, upload the docs to GitHub Pages.
+#### YAML checking bugs
 
-## For use in this repo only
+Some of the Markdown extensions in `mkdocs.yaml` are "unsafe" and will trip the pre-commit hook `check-yaml`. You can remove these extension, ignore this file in the hook configuration with `exclude: "mkdocs.yaml"`, or add `args: ["--unsafe"]` to the pre-commit hook.
+
+#### Math rendering
+
+`docs/javascript/katex.js` provides math rendering. It is referenced in `mkdocs.yaml`.
+
+See the [mkdocs-material](https://squidfunk.github.io/mkdocs-material/reference/math/) for information on math rendering.
+
+Note that rendering ` ```math ` blocks requires a "superfences" option in `mkdocs.yaml`.
+
+#### API docs autogeneration
+
+`docs/api.md` gives you an example of how to use [mkdocstrings](https://mkdocstrings.github.io/) to generate API documentation from doc strings.
+
+#### GitHub continuous integration
+
+`.github/workflows/mkdocs.yaml` runs two jobs. On each PR and push to main, check that `mkdocs build` runs without error, and upload a copy of the build docs. On a push to main, deploy those built docs to GitHub Pages.
+
+Note that `mkdocs gh-deploy` uses the older strategy of using GitHub Pages, by pushing to a `gh-pages` branch. The action in this repo uses artifacts instead. See the [GitHub documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow) for more details.
+
+## Deployment
+
+`mkdocs gh-deploy` should just work, _whether your repo is on CDCGov or CDCEnt_. For repos on CDCGov, this will make a publicly-available website at `cdcgov.github.io/[repo]/`.
+
+> [!CAUTION]
+>
+> CFA policy requires that publicly-available documentation should only by used for documentation of software, not scientific results or publications.
+
+If your repo is in a private GitHub organization, a redirect will be made to a website only accessible with the appropriate credentials.
+
+## Contributing to this template
 
 - These files are a skeleton so that the API documentation can build:
   - `mkdtemp/`
